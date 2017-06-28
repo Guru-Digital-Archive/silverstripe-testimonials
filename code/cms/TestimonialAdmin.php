@@ -2,10 +2,9 @@
 
 class TestimonialAdmin extends ModelAdmin
 {
-
-    private static $managed_models = array("Testimonial");
-    private static $url_segment    = "Testimonials";
-    private static $menu_title     = "Testimonials";
+    private static $managed_models = ['Testimonial'];
+    private static $url_segment    = 'Testimonials';
+    private static $menu_title     = 'Testimonials';
 
     public function getEditForm($id = null, $fields = null)
     {

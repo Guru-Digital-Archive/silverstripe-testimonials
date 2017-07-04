@@ -17,7 +17,7 @@
     "require": {
         "silverstripe/cms": "^3.0",
         "composer/installers": "*",
-        "silverstripe-australia/gridfieldextensions": "^1"
+        "symbiote/silverstripe-gridfieldextensions": "^1"
     },
     "extra": {
         "installer-name": "silverstripe-testimonials"

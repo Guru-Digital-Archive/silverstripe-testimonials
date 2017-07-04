@@ -3,29 +3,29 @@
 class Testimonial extends DataObject
 {
 
-    private static $db = array(
+    private static $db                = [
+        'Content'   => 'Text',
         'Author'    => 'Text',
         'Approved'  => 'Boolean',
-        'Content'   => 'Text',
         'SortOrder' => 'Int'
-    );
-    private static $searchable_fields = array(
-        'Approved',
+    ];
+    private static $searchable_fields = [
+        'Content',
         'Author',
-        'Content'
-    );
-    private static $summary_fields = array(
+        'Approved'
+    ];
+    private static $summary_fields    = [
         'Created'       => 'Created',
         'Author'        => 'Author',
         'Content'       => 'Content',
         'Approved.Nice' => 'Approved'
-    );
-    private static $default_sort = "Created DESC";
+    ];
+    private static $default_sort      = 'Created DESC';
 
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-        $fields->removeByName("SortOrder");
+        $fields->removeByName('SortOrder');
         return $fields;
     }
 
@@ -37,7 +37,7 @@ class Testimonial extends DataObject
     protected function onBeforeWrite()
     {
         if (!$this->SortOrder) {
-            $this->SortOrder = $this::get()->max("SortOrder") + 1;
+            $this->SortOrder = $this::get()->max('SortOrder') + 1;
         }
         return parent::onBeforeWrite();
     }
